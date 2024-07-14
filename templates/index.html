@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcrição de Áudio</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h2 { color: #2c3e50; }
+        label { font-size: 16px; color: #2c3e50; display: block; margin-bottom: 5px; }
+        input, select, button { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px; }
+        button { background-color: #007bff; color: #ffffff; cursor: pointer; border: none; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Transcrição de Áudio</h2>
+        <form method="POST" action="/">
+            <label for="link">Link do Google Drive</label>
+            <input type="text" id="link" name="link" required>
+            
+            <label for="model_size">Qualidade</label>
+            <select id="model_size" name="model_size">
+                <option value="tiny">Tiny</option>
+                <option value="base">Base</option>
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+            </select>
+            
+            <label for="send_email">Enviar por e-mail?</label>
+            <select id="send_email" name="send_email">
+                <option value="Sim" selected>Sim</option>
+                <option value="Não">Não</option>
+            </select>
+            
+            <div id="email_fields">
+                <label for="email">E-mail de Destino</label>
+                <input type="email" id="email" name="email" value="ramon@szsolucoes.com.br">
+                
+                <label for="smtp_server">Servidor SMTP</label>
+                <input type="text" id="smtp_server" name="smtp_server" value="mail.szsolucoes.com.br">
+                
+                <label for="smtp_port">Porta SMTP</label>
+                <input type="text" id="smtp_port" name="smtp_port" value="465">
+                
+                <label for="email_user">Usuário do E-mail</label>
+                <input type="text" id="email_user" name="email_user" value="ramon.mendes@szsolucoes.com.br">
+                
+                <label for="email_password">Senha do E-mail</label>
+                <input type="password" id="email_password" name="email_password" value="SZ@R@M0n">
+            </div>
+            
+            <button type="submit">Processar</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('send_email').addEventListener('change', function () {
+            var display = this.value === 'Sim' ? 'block' : 'none';
+            document.getElementById('email_fields').style.display = display;
+        });
+    </script>
+</body>
+</html>
