@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../WorkSpace"
+		},
+		{
+			"path": "../../../Downloads/Instalação Protheus Docker/Novo Fonte"
+		}
+	],
+	"settings": {
+		"totvsLanguageServer.welcomePage": false,
+		"totvsLanguageServer.editor.linter.includes": "C:\\Users\\ramon\\Downloads\\OK 24-01-05-P12_INCLUDES\\24-01-05-P12_INCLUDES"
+	}
+}
