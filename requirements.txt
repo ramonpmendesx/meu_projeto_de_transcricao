@@ -5,4 +5,4 @@ google-auth
 google-auth-oauthlib
 google-auth-httplib2
 requests
-whisper @ git+https://github.com/openai/whisper.git
+openai-whisper @ git+https://github.com/openai/whisper.git
