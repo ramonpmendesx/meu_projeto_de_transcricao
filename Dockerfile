@@ -1,8 +1,8 @@
 # Usar imagem base do Python
 FROM python:3.9-slim
 
-# Instalar git
-RUN apt-get update && apt-get install -y git
+# Instalar git e ffmpeg
+RUN apt-get update && apt-get install -y git ffmpeg
 
 # Definir o diretório de trabalho
 WORKDIR /app
@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 5000
 
 # Comando para rodar a aplicação
-CMD ["python", "app.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
