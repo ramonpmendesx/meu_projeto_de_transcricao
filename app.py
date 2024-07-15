@@ -16,7 +16,7 @@ import io
 
 app = Flask(__name__)
 
-# Função para autenticar e criar o serviço do Google Drive
+# Função para autenticar / criar o serviço do Google Drive
 def create_drive_service():
     from google.oauth2 import service_account
     SCOPES = ['https://www.googleapis.com/auth/drive']
